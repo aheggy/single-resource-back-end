@@ -11,12 +11,12 @@ app.use(express.json());
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.send("Welcome to the Single-resource App");
+  res.send("Welcome to the Cities App");
 });
 
 // RESOURCES ROUTES
-const resourcesController = require("./controllers/resourceController.js");
-app.use("/planets", resourcesController);
+const citiesController = require("./controllers/citieController.js");
+app.use("/cities", citiesController);
 
 // 404 PAGE
 app.get("*", (req, res) => {
