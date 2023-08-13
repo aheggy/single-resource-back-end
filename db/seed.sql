@@ -10,4 +10,4 @@ INSERT INTO cities (name, country,population, url,is_favorite) VALUES
 ('Rome', 'Italy', 4355725, 'https://ibb.co/ctL4QYB', true),
 ('Kyoto', 'Japan', 1475000, 'https://ibb.co/0s8V116', true),
 ('Dubai', 'United Arab Emirates', 3490000, 'https://ibb.co/QPrNm70', true),
-('Berlin', 'Germany', 3850809, 'https://ibb.co/sQMnYhr', true),
+('Berlin', 'Germany', 3850809, 'https://ibb.co/sQMnYhr', true)

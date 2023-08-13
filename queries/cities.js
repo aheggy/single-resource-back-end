@@ -56,13 +56,14 @@ const deleteCitie = async (id) => {
 const updateCitie = async (id, citie) => {
   try {
     const updatedCitie = await db.one(
-      "INSERT INTO cities (name, country,population, url,is_favorite) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      "UPDATE cities SET name=$1, country=$2, population=$3, url=$4, is_favorite=$5 WHERE id =$6 RETURNING *",
       [
         citie.name,
         citie.country,
         citie.population,
         citie.url,
         citie.is_favorite,
+        id,
       ]
     );
     return updatedCitie;
