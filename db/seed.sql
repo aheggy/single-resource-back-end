@@ -1,4 +1,4 @@
-\c cities_dev;
+\c cities_db;
 
 INSERT INTO cities (name, country,population, url,is_favorite) VALUES
 ('New York', 'U.S.A.', 8804190, 'https://fullsuitcase.com/wp-content/uploads/2022/05/One-day-in-New-York-USA-NYC-day-trip-itinerary.jpg', true),

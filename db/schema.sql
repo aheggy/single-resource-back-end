@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS cities_dev;
-CREATE DATABASE cities_dev;
+DROP DATABASE IF EXISTS cities_db;
+CREATE DATABASE cities_db;
 
-\c cities_dev;
+\c cities_db;
 
 CREATE TABLE cities (
  id SERIAL PRIMARY KEY,
