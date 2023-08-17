@@ -1,72 +1,73 @@
 const db = require("../db/dbConfig.js");
 
-// ALL CITIE
+// ALL CITIES
 const getAllCities = async () => {
   try {
     const allCities = await db.any("SELECT * FROM cities");
     return allCities;
   } catch (error) {
+    console.error("Error fetching all cities:", error);
     return error;
   }
 };
 
 // ONE CITIE
-const getCitie = async (id) => {
+const getCity = async (id) => {
   try {
-    const oneCitie = await db.one("SELECT * FROM cities WHERE id=$1", id);
-    return oneCitie;
+    const oneCity = await db.one("SELECT * FROM cities WHERE id=$1", id);
+    return oneCity;
   } catch (error) {
     return error;
   }
 };
 
 // CREATE (POST)
-const createCitie = async (citie) => {
+const createCity = async (city) => {
   try {
-    const newCitie = await db.one(
-      "INSERT INTO cities (name, country,population, url,is_favorite) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+    const newCity = await db.one(
+      "INSERT INTO cities (city, country,population, url,is_favorite) VALUES ($1, $2, $3, $4, $5) RETURNING *",
       [
-        citie.name,
-        citie.country,
-        citie.population,
-        citie.url,
-        citie.is_favorite,
+        city.city,
+        city.country,
+        city.population,
+        city.url,
+        city.is_favorite,
       ]
     );
-    return newCitie;
+    return newCity;
   } catch (error) {
     return error;
   }
 };
 
 // DELETE
-const deleteCitie = async (id) => {
+const deleteCity = async (id) => {
   try {
-    const deletedCitie = await db.one(
+    const deletedCity = await db.one(
       "DELETE FROM cities WHERE id = $1 RETURNING *",
       id
     );
-    return deletedCitie;
+    return deletedCity;
   } catch (error) {
     return error;
   }
 };
 
 //UPDATE
-const updateCitie = async (id, citie) => {
+const updateCity = async (id, city) => {
   try {
-    const updatedCitie = await db.one(
-      "UPDATE cities SET name=$1, country=$2, population=$3, url=$4, is_favorite=$5 WHERE id =$6 RETURNING *",
+    const updatedCity = await db.one(
+      "UPDATE cities SET city=$1, country=$2, population=$3, url=$4, is_favorite=$5 WHERE id =$6 RETURNING *",
       [
-        citie.name,
-        citie.country,
-        citie.population,
-        citie.url,
-        citie.is_favorite,
+        city.city,
+        city.country,
+        city.population,
+        city.url,
+        city.is_favorite,
         id,
       ]
     );
-    return updatedCitie;
+    return updatedCity;
   } catch (error) {
     return error;
   }
@@ -74,8 +75,8 @@ const updateCitie = async (id, citie) => {
 
 module.exports = {
   getAllCities,
-  getCitie,
-  createCitie,
-  deleteCitie,
-  updateCitie,
+  getCity,
+  createCity,
+  deleteCity,
+  updateCity,
 };

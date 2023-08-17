@@ -1,6 +1,6 @@
 \c cities_db;
 
-INSERT INTO cities (name, country,population, url,is_favorite) VALUES
+INSERT INTO cities (city, country,population, url,is_favorite) VALUES
 ('New York', 'U.S.A.', 8804190, 'https://fullsuitcase.com/wp-content/uploads/2022/05/One-day-in-New-York-USA-NYC-day-trip-itinerary.jpg', true),
 ('Sydney', 'Australia', 5259764, 'https://travel.home.sndimg.com/content/dam/images/travel/fullset/2013/12/04/7f/sydney-opera-house-2.rend.hgtvcom.616.462.suffix/1491592110293.jpeg', false),
 ('London', 'England', 8799800, 'https://a.cdn-hotels.com/gdcs/production29/d1870/6a5ec560-bb25-11e8-970b-0242ac110006.jpg?impolicy=fcrop&w=800&h=533&q=medium', true),
